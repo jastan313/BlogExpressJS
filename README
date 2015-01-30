@@ -1,0 +1,49 @@
+Author: Jason Tan
+Company: BlueJay
+
+Files:
+   blogserver.js - the express server code (including schema) for the blog
+   package.json - project metadata and dependency listing
+
+Schema:
+
+Comment = {
+   user: String,
+   title: String,
+   body: String,
+   date: Date
+}
+
+BlogPost = {
+   _postid:Schema.ObjectId,
+   author: String,
+   title: String,
+   body: String,
+   date: Date,
+   comments: [Comment],
+   meta: { votes : Number,
+           favs : Number }
+}
+
+RESTful API:
+Under "/posts":
+---------------------------------------------------
+GET - Retrieves all posts
+POST - Creates new post
+
+Under "/posts/:blogpost_id":
+---------------------------------------------------
+GET - Retrieves specified post
+PUT - Updates specified post
+DELETE - Deletes specified post
+
+Under "/posts/:blogpost_id"/comments":
+---------------------------------------------------
+GET - Retrieves all comments under specified post
+POST - Creates new comment under specified post
+
+Under "/posts/:blogpost_id"/comments/:comment_id":
+---------------------------------------------------
+GET - Retrieves specified comment under specified post
+PUT - Updates specified comment under specified post
+DELETE - Deletes specified comment under specified post

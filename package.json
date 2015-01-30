@@ -1,0 +1,13 @@
+{
+  "name": "blogAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blogserver.js",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "express": "^4.11.1",
+    "mongodb": "^1.4.29",
+    "npm": "^1.4.28",
+    "mongoose": "^3.8.22"
+  }
+}
